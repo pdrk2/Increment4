@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="item_retrieve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="item_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="item_retrieveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item_retrieveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="searchresults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchven" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchresultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchresultsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="item_retrieveSoapIn">
+    <wsdl:part name="parameters" element="tns:item_retrieve" />
+  </wsdl:message>
+  <wsdl:message name="item_retrieveSoapOut">
+    <wsdl:part name="parameters" element="tns:item_retrieveResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchresultsSoapIn">
+    <wsdl:part name="parameters" element="tns:searchresults" />
+  </wsdl:message>
+  <wsdl:message name="searchresultsSoapOut">
+    <wsdl:part name="parameters" element="tns:searchresultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="item_retrieveHttpGetIn">
+    <wsdl:part name="item_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="item_retrieveHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="searchresultsHttpGetIn">
+    <wsdl:part name="searchven" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="searchresultsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="item_retrieveHttpPostIn">
+    <wsdl:part name="item_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="item_retrieveHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="searchresultsHttpPostIn">
+    <wsdl:part name="searchven" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="searchresultsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:portType name="findSoap">
+    <wsdl:operation name="item_retrieve">
+      <wsdl:input message="tns:item_retrieveSoapIn" />
+      <wsdl:output message="tns:item_retrieveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <wsdl:input message="tns:searchresultsSoapIn" />
+      <wsdl:output message="tns:searchresultsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="findHttpGet">
+    <wsdl:operation name="item_retrieve">
+      <wsdl:input message="tns:item_retrieveHttpGetIn" />
+      <wsdl:output message="tns:item_retrieveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <wsdl:input message="tns:searchresultsHttpGetIn" />
+      <wsdl:output message="tns:searchresultsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="findHttpPost">
+    <wsdl:operation name="item_retrieve">
+      <wsdl:input message="tns:item_retrieveHttpPostIn" />
+      <wsdl:output message="tns:item_retrieveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <wsdl:input message="tns:searchresultsHttpPostIn" />
+      <wsdl:output message="tns:searchresultsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="findSoap" type="tns:findSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="item_retrieve">
+      <soap:operation soapAction="http://tempuri.org/item_retrieve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <soap:operation soapAction="http://tempuri.org/searchresults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="findSoap12" type="tns:findSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="item_retrieve">
+      <soap12:operation soapAction="http://tempuri.org/item_retrieve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <soap12:operation soapAction="http://tempuri.org/searchresults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="findHttpGet" type="tns:findHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="item_retrieve">
+      <http:operation location="/item_retrieve" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <http:operation location="/searchresults" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="findHttpPost" type="tns:findHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="item_retrieve">
+      <http:operation location="/item_retrieve" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchresults">
+      <http:operation location="/searchresults" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="find">
+    <wsdl:port name="findSoap" binding="tns:findSoap">
+      <soap:address location="http://localhost:14575/find.asmx" />
+    </wsdl:port>
+    <wsdl:port name="findSoap12" binding="tns:findSoap12">
+      <soap12:address location="http://localhost:14575/find.asmx" />
+    </wsdl:port>
+    <wsdl:port name="findHttpGet" binding="tns:findHttpGet">
+      <http:address location="http://localhost:14575/find.asmx" />
+    </wsdl:port>
+    <wsdl:port name="findHttpPost" binding="tns:findHttpPost">
+      <http:address location="http://localhost:14575/find.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="user_login_check">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_login_checkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_login_checkResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_reg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_regResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_regResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_reg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cat1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_regResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vendor_regResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_retrieve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user_retrieveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_retrieveResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vendor_retrieve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_retrieveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendor_retrieveResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_try">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_tryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendor_tryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="int" type="s:int" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="user_login_checkSoapIn">
+    <wsdl:part name="parameters" element="tns:user_login_check" />
+  </wsdl:message>
+  <wsdl:message name="user_login_checkSoapOut">
+    <wsdl:part name="parameters" element="tns:user_login_checkResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_regSoapIn">
+    <wsdl:part name="parameters" element="tns:user_reg" />
+  </wsdl:message>
+  <wsdl:message name="user_regSoapOut">
+    <wsdl:part name="parameters" element="tns:user_regResponse" />
+  </wsdl:message>
+  <wsdl:message name="vendor_regSoapIn">
+    <wsdl:part name="parameters" element="tns:vendor_reg" />
+  </wsdl:message>
+  <wsdl:message name="vendor_regSoapOut">
+    <wsdl:part name="parameters" element="tns:vendor_regResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_retrieveSoapIn">
+    <wsdl:part name="parameters" element="tns:user_retrieve" />
+  </wsdl:message>
+  <wsdl:message name="user_retrieveSoapOut">
+    <wsdl:part name="parameters" element="tns:user_retrieveResponse" />
+  </wsdl:message>
+  <wsdl:message name="vendor_retrieveSoapIn">
+    <wsdl:part name="parameters" element="tns:vendor_retrieve" />
+  </wsdl:message>
+  <wsdl:message name="vendor_retrieveSoapOut">
+    <wsdl:part name="parameters" element="tns:vendor_retrieveResponse" />
+  </wsdl:message>
+  <wsdl:message name="vendor_trySoapIn">
+    <wsdl:part name="parameters" element="tns:vendor_try" />
+  </wsdl:message>
+  <wsdl:message name="vendor_trySoapOut">
+    <wsdl:part name="parameters" element="tns:vendor_tryResponse" />
+  </wsdl:message>
+  <wsdl:message name="user_login_checkHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="user_login_checkHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="user_regHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="contact_no" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="user_regHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="vendor_regHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="contact_no" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="time" type="s:string" />
+    <wsdl:part name="cat1" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_regHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="user_retrieveHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="user_retrieveHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="vendor_retrieveHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_retrieveHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="vendor_tryHttpGetIn">
+    <wsdl:part name="user_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_tryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="user_login_checkHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="user_login_checkHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="user_regHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="contact_no" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="user_regHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="vendor_regHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="contact_no" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="time" type="s:string" />
+    <wsdl:part name="cat1" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_regHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="user_retrieveHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="user_retrieveHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="vendor_retrieveHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_retrieveHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="vendor_tryHttpPostIn">
+    <wsdl:part name="user_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_tryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:portType name="login1Soap">
+    <wsdl:operation name="user_login_check">
+      <wsdl:input message="tns:user_login_checkSoapIn" />
+      <wsdl:output message="tns:user_login_checkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <wsdl:input message="tns:user_regSoapIn" />
+      <wsdl:output message="tns:user_regSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <wsdl:input message="tns:vendor_regSoapIn" />
+      <wsdl:output message="tns:vendor_regSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <wsdl:input message="tns:user_retrieveSoapIn" />
+      <wsdl:output message="tns:user_retrieveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <wsdl:input message="tns:vendor_retrieveSoapIn" />
+      <wsdl:output message="tns:vendor_retrieveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <wsdl:input message="tns:vendor_trySoapIn" />
+      <wsdl:output message="tns:vendor_trySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="login1HttpGet">
+    <wsdl:operation name="user_login_check">
+      <wsdl:input message="tns:user_login_checkHttpGetIn" />
+      <wsdl:output message="tns:user_login_checkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <wsdl:input message="tns:user_regHttpGetIn" />
+      <wsdl:output message="tns:user_regHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <wsdl:input message="tns:vendor_regHttpGetIn" />
+      <wsdl:output message="tns:vendor_regHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <wsdl:input message="tns:user_retrieveHttpGetIn" />
+      <wsdl:output message="tns:user_retrieveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <wsdl:input message="tns:vendor_retrieveHttpGetIn" />
+      <wsdl:output message="tns:vendor_retrieveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <wsdl:input message="tns:vendor_tryHttpGetIn" />
+      <wsdl:output message="tns:vendor_tryHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="login1HttpPost">
+    <wsdl:operation name="user_login_check">
+      <wsdl:input message="tns:user_login_checkHttpPostIn" />
+      <wsdl:output message="tns:user_login_checkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <wsdl:input message="tns:user_regHttpPostIn" />
+      <wsdl:output message="tns:user_regHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <wsdl:input message="tns:vendor_regHttpPostIn" />
+      <wsdl:output message="tns:vendor_regHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <wsdl:input message="tns:user_retrieveHttpPostIn" />
+      <wsdl:output message="tns:user_retrieveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <wsdl:input message="tns:vendor_retrieveHttpPostIn" />
+      <wsdl:output message="tns:vendor_retrieveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <wsdl:input message="tns:vendor_tryHttpPostIn" />
+      <wsdl:output message="tns:vendor_tryHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="login1Soap" type="tns:login1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="user_login_check">
+      <soap:operation soapAction="http://tempuri.org/user_login_check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <soap:operation soapAction="http://tempuri.org/user_reg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <soap:operation soapAction="http://tempuri.org/vendor_reg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <soap:operation soapAction="http://tempuri.org/user_retrieve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <soap:operation soapAction="http://tempuri.org/vendor_retrieve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <soap:operation soapAction="http://tempuri.org/vendor_try" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="login1Soap12" type="tns:login1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="user_login_check">
+      <soap12:operation soapAction="http://tempuri.org/user_login_check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <soap12:operation soapAction="http://tempuri.org/user_reg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <soap12:operation soapAction="http://tempuri.org/vendor_reg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <soap12:operation soapAction="http://tempuri.org/user_retrieve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <soap12:operation soapAction="http://tempuri.org/vendor_retrieve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <soap12:operation soapAction="http://tempuri.org/vendor_try" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="login1HttpGet" type="tns:login1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="user_login_check">
+      <http:operation location="/user_login_check" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <http:operation location="/user_reg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <http:operation location="/vendor_reg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <http:operation location="/user_retrieve" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <http:operation location="/vendor_retrieve" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <http:operation location="/vendor_try" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="login1HttpPost" type="tns:login1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="user_login_check">
+      <http:operation location="/user_login_check" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_reg">
+      <http:operation location="/user_reg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_reg">
+      <http:operation location="/vendor_reg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="user_retrieve">
+      <http:operation location="/user_retrieve" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_retrieve">
+      <http:operation location="/vendor_retrieve" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_try">
+      <http:operation location="/vendor_try" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="login1">
+    <wsdl:port name="login1Soap" binding="tns:login1Soap">
+      <soap:address location="http://localhost:14575/login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="login1Soap12" binding="tns:login1Soap12">
+      <soap12:address location="http://localhost:14575/login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="login1HttpGet" binding="tns:login1HttpGet">
+      <http:address location="http://localhost:14575/login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="login1HttpPost" binding="tns:login1HttpPost">
+      <http:address location="http://localhost:14575/login.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

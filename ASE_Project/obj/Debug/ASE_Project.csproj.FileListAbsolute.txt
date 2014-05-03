@@ -1,0 +1,59 @@
+c:\users\dinne\documents\visual studio 2013\Projects\ASE_Project\ASE_Project\bin\ASE_Project.dll.config
+c:\users\dinne\documents\visual studio 2013\Projects\ASE_Project\ASE_Project\bin\ASE_Project.dll
+c:\users\dinne\documents\visual studio 2013\Projects\ASE_Project\ASE_Project\bin\ASE_Project.pdb
+c:\users\dinne\documents\visual studio 2013\Projects\ASE_Project\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+c:\users\dinne\documents\visual studio 2013\Projects\ASE_Project\ASE_Project\obj\Debug\ASE_Project.dll
+c:\users\dinne\documents\visual studio 2013\Projects\ASE_Project\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\dinne\Documents\Visual Studio 2013\Projects\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\dinne\Documents\Visual Studio 2013\Projects\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\dinne\Documents\Visual Studio 2013\Projects\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\dinne\Documents\Visual Studio 2013\Projects\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\dinne\Documents\Visual Studio 2013\Projects\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\dinne\Documents\Visual Studio 2013\Projects\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\anudeep\Desktop\ASE_Project\1Updated_Project\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\anudeep\Desktop\ASE_Project\1Updated_Project\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\anudeep\Desktop\ASE_Project\1Updated_Project\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\anudeep\Desktop\ASE_Project\1Updated_Project\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\anudeep\Desktop\ASE_Project\1Updated_Project\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\anudeep\Desktop\ASE_Project\1Updated_Project\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\anudeep\Desktop\111111111\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\anudeep\Desktop\111111111\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\anudeep\Desktop\111111111\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\anudeep\Desktop\111111111\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\anudeep\Desktop\111111111\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\anudeep\Desktop\111111111\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\dinne\Desktop\New folder\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\dinne\Desktop\New folder\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\dinne\Desktop\New folder\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\dinne\Desktop\New folder\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\dinne\Desktop\New folder\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\dinne\Desktop\New folder\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\obj\Debug\Interop.SpeechLib.dll
+C:\Users\prathyusha dinne\Desktop\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csproj.ResolveComReference.cache
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\obj\Debug\Interop.SpeechLib.dll
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csproj.ResolveComReference.cache
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\prathyusha dinne\Desktop\trial\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\bin\ASE_Project.dll.config
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\bin\ASE_Project.dll
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\bin\ASE_Project.pdb
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csprojResolveAssemblyReference.cache
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\Interop.SpeechLib.dll
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csproj.ResolveComReference.cache
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.ChatWin.aspx.resources
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.Default.aspx.resources
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.Global.asax.resources
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.TheChatScreenWin.aspx.resources
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.csproj.GenerateResource.Cache
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.dll
+C:\Users\prathyusha dinne\Desktop\Ase\ASE_Soap\ASE_Project\obj\Debug\ASE_Project.pdb

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="menu_retrieve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="menu_retrieveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="menu_retrieveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="item_add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item_price" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="item_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="main_vname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="item_addResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="item_addResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_service">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="service" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vendor_serviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendor_serviceResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="int" type="s:int" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="menu_retrieveSoapIn">
+    <wsdl:part name="parameters" element="tns:menu_retrieve" />
+  </wsdl:message>
+  <wsdl:message name="menu_retrieveSoapOut">
+    <wsdl:part name="parameters" element="tns:menu_retrieveResponse" />
+  </wsdl:message>
+  <wsdl:message name="item_addSoapIn">
+    <wsdl:part name="parameters" element="tns:item_add" />
+  </wsdl:message>
+  <wsdl:message name="item_addSoapOut">
+    <wsdl:part name="parameters" element="tns:item_addResponse" />
+  </wsdl:message>
+  <wsdl:message name="vendor_serviceSoapIn">
+    <wsdl:part name="parameters" element="tns:vendor_service" />
+  </wsdl:message>
+  <wsdl:message name="vendor_serviceSoapOut">
+    <wsdl:part name="parameters" element="tns:vendor_serviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="menu_retrieveHttpGetIn">
+    <wsdl:part name="vendorName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="menu_retrieveHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="item_addHttpGetIn">
+    <wsdl:part name="item_name" type="s:string" />
+    <wsdl:part name="item_price" type="s:string" />
+    <wsdl:part name="item_type" type="s:string" />
+    <wsdl:part name="item_desc" type="s:string" />
+    <wsdl:part name="main_vname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="item_addHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="vendor_serviceHttpGetIn">
+    <wsdl:part name="service" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_serviceHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="menu_retrieveHttpPostIn">
+    <wsdl:part name="vendorName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="menu_retrieveHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="item_addHttpPostIn">
+    <wsdl:part name="item_name" type="s:string" />
+    <wsdl:part name="item_price" type="s:string" />
+    <wsdl:part name="item_type" type="s:string" />
+    <wsdl:part name="item_desc" type="s:string" />
+    <wsdl:part name="main_vname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="item_addHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="vendor_serviceHttpPostIn">
+    <wsdl:part name="service" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="vendor_serviceHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:portType name="vendor_menusSoap">
+    <wsdl:operation name="menu_retrieve">
+      <wsdl:input message="tns:menu_retrieveSoapIn" />
+      <wsdl:output message="tns:menu_retrieveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <wsdl:input message="tns:item_addSoapIn" />
+      <wsdl:output message="tns:item_addSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <wsdl:input message="tns:vendor_serviceSoapIn" />
+      <wsdl:output message="tns:vendor_serviceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="vendor_menusHttpGet">
+    <wsdl:operation name="menu_retrieve">
+      <wsdl:input message="tns:menu_retrieveHttpGetIn" />
+      <wsdl:output message="tns:menu_retrieveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <wsdl:input message="tns:item_addHttpGetIn" />
+      <wsdl:output message="tns:item_addHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <wsdl:input message="tns:vendor_serviceHttpGetIn" />
+      <wsdl:output message="tns:vendor_serviceHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="vendor_menusHttpPost">
+    <wsdl:operation name="menu_retrieve">
+      <wsdl:input message="tns:menu_retrieveHttpPostIn" />
+      <wsdl:output message="tns:menu_retrieveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <wsdl:input message="tns:item_addHttpPostIn" />
+      <wsdl:output message="tns:item_addHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <wsdl:input message="tns:vendor_serviceHttpPostIn" />
+      <wsdl:output message="tns:vendor_serviceHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vendor_menusSoap" type="tns:vendor_menusSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="menu_retrieve">
+      <soap:operation soapAction="http://tempuri.org/menu_retrieve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <soap:operation soapAction="http://tempuri.org/item_add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <soap:operation soapAction="http://tempuri.org/vendor_service" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vendor_menusSoap12" type="tns:vendor_menusSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="menu_retrieve">
+      <soap12:operation soapAction="http://tempuri.org/menu_retrieve" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <soap12:operation soapAction="http://tempuri.org/item_add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <soap12:operation soapAction="http://tempuri.org/vendor_service" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vendor_menusHttpGet" type="tns:vendor_menusHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="menu_retrieve">
+      <http:operation location="/menu_retrieve" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <http:operation location="/item_add" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <http:operation location="/vendor_service" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vendor_menusHttpPost" type="tns:vendor_menusHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="menu_retrieve">
+      <http:operation location="/menu_retrieve" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="item_add">
+      <http:operation location="/item_add" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vendor_service">
+      <http:operation location="/vendor_service" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vendor_menus">
+    <wsdl:port name="vendor_menusSoap" binding="tns:vendor_menusSoap">
+      <soap:address location="http://localhost:14575/vendor_menus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vendor_menusSoap12" binding="tns:vendor_menusSoap12">
+      <soap12:address location="http://localhost:14575/vendor_menus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vendor_menusHttpGet" binding="tns:vendor_menusHttpGet">
+      <http:address location="http://localhost:14575/vendor_menus.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vendor_menusHttpPost" binding="tns:vendor_menusHttpPost">
+      <http:address location="http://localhost:14575/vendor_menus.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
